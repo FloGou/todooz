@@ -13,12 +13,6 @@ public class HelloWorldServlet extends HttpServlet {
    @Override
    protected void doGet(HttpServletRequest request, HttpServletResponse response)
                                    throws ServletException, IOException {
-	   String name = request.getParameter("name");
-
-       if (name == null) {
-          name = (String) request.getSession(true).getAttribute("name");
-       }
-
-       response.getWriter().write("Hello " + name + " !");
+	   request.getRequestDispatcher("index.html").forward(request, response);
    }
 }
