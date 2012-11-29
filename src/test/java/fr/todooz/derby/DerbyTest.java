@@ -33,6 +33,7 @@ public class DerbyTest {
    public void clean() throws SQLException {
       try {
          connection.createStatement().execute("drop table test");
+         connection.close();
       } catch (SQLException e) {
          // la table n'existait pas
          if (!e.getMessage().equals("'DROP TABLE' cannot be performed on 'TEST' because it does not exist.")) {
@@ -56,6 +57,7 @@ public class DerbyTest {
       stmt.setString(2, "Marx");
 
       Assert.assertEquals(1, stmt.executeUpdate());
+      stmt.close();
    }
 
    @Test
@@ -71,6 +73,9 @@ public class DerbyTest {
      rs.next();
 
      Assert.assertEquals("Groucho", rs.getString("firstname"));
+     
+     stmt.close();
+     rs.close();
    }
 
    @Test
@@ -82,5 +87,6 @@ public class DerbyTest {
      stmt.setString(1, "Marx");
 
      Assert.assertEquals(1, stmt.executeUpdate());
+     stmt.close();
    }
 }

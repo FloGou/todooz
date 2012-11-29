@@ -4,6 +4,8 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
+import org.apache.commons.lang.StringUtils;
+
 public class TagCloud {
 
 	private List<String> tags = new ArrayList<String>();
@@ -11,8 +13,7 @@ public class TagCloud {
 	public void add(String ... listetags) {
 		if (listetags != null){
 			for (String tag : listetags){
-				if (!tags.contains(tag) && (tag!=null) && (tag != "")){
-
+				if (!tags.contains(tag) && !StringUtils.isEmpty(tag)){
 					tags.add(tag);
 				}
 			}
