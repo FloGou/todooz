@@ -6,7 +6,7 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>fr.todooz</groupId>
   <artifactId>todooz</artifactId>
-  <packaging>jar</packaging>
+  <packaging>war</packaging>
   <version>1.0-SNAPSHOT</version>
   <name>todooz</name>
   <url>http://maven.apache.org</url>
@@ -21,6 +21,14 @@
                 <target>1.6</target>
             </configuration>
         </plugin>
+        <plugin>
+                <groupId>org.codehaus.mojo</groupId>
+                <artifactId>tomcat-maven-plugin</artifactId>
+                <version>1.1</version>
+                <configuration>
+                    <path>/</path>
+                </configuration>
+            </plugin>
     </plugins>
   </build>
   <dependencies>
