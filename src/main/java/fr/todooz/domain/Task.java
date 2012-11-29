@@ -1,7 +1,7 @@
 package fr.todooz.domain;
 
 import java.util.Date;
-
+// Cette classe à été modifiée afin de tester le build
 public class Task {
 	private Date createdAt = new Date();
 
