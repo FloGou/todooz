@@ -7,4 +7,21 @@
 
    <display-name>todooz</display-name>
 
+   
+   	<servlet>
+   		<servlet-name>HelloWorldServlet</servlet-name>
+   		<servlet-class>fr.todooz.web.servlet.HelloWorldServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+   		<servlet-name>HelloWorldServlet</servlet-name>
+   		<url-pattern>/HelloWorldServlet</url-pattern>
+	</servlet-mapping>
+	<servlet>
+   		<servlet-name>HelloWorldRedirectServlet</servlet-name>
+   		<servlet-class>fr.todooz.web.servlet.HelloWorldRedirectServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+   		<servlet-name>HelloWorldRedirectServlet</servlet-name>
+   		<url-pattern>/HelloWorldRedirectServlet</url-pattern>
+	</servlet-mapping>
 </web-app>
