@@ -24,4 +24,12 @@
    		<servlet-name>HelloWorldRedirectServlet</servlet-name>
    		<url-pattern>/HelloWorldRedirectServlet</url-pattern>
 	</servlet-mapping>
+	<servlet>
+   		<servlet-name>HelloWorldSessionServlet</servlet-name>
+   		<servlet-class>fr.todooz.web.servlet.HelloWorldSessionServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+   		<servlet-name>HelloWorldSessionServlet</servlet-name>
+   		<url-pattern>/HelloWorldSessionServlet</url-pattern>
+	</servlet-mapping>
 </web-app>

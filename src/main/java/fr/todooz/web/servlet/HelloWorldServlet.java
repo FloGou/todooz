@@ -15,6 +15,10 @@ public class HelloWorldServlet extends HttpServlet {
                                    throws ServletException, IOException {
 	   String name = request.getParameter("name");
 
+       if (name == null) {
+          name = (String) request.getSession(true).getAttribute("name");
+       }
+
        response.getWriter().write("Hello " + name + " !");
    }
 }
