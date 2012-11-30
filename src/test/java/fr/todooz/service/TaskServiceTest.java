@@ -101,5 +101,15 @@ public class TaskServiceTest {
 
 	    Assert.assertEquals(2, taskService.count());
 	}
+	
+	@Test
+	public void udpate() {
+	    Task task = task();
+
+	    taskService.save(task);
+	    taskService.save(task);
+
+	    Assert.assertEquals(1, taskService.count());
+	}
 
 }

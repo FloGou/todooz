@@ -28,7 +28,9 @@ public class TaskServiceImpl implements TaskService {
 	@Transactional
 	public void save(Task task) {
 		Session session = sessionFactory.getCurrentSession();
-		session.save(task);
+		session.saveOrUpdate(task);
+		
+		
 	}
 
 
@@ -96,6 +98,15 @@ public class TaskServiceImpl implements TaskService {
 		
 		List<Task> maliste =  crit.list();
 		return maliste;
+	}
+
+
+	@Override
+	@Transactional(readOnly = true)
+	public Task findById(Long id) {
+		Session session =sessionFactory.getCurrentSession();
+		
+		return (Task)session.get(Task.class, id);
 	}
 	
 }

@@ -11,14 +11,25 @@
 <link href="/css/bootstrap.min.css" rel="stylesheet">
 </head>
 <body>
+
 	<div class="container">
 		<widget:header />
+		<c:if test="${not empty flashMessage}">
+			<div class="alert">${flashMessage}</div>
+		</c:if>
 		<div class="row">
 			<div class="span9">
 				<legend>All tasks</legend>
-				<c:forEach var="task" items="${tasks}">
-					<widget:task task="${task}" />
-				</c:forEach>
+				<table class="table table-hover">
+					<c:forEach var="task" items="${tasks}">
+						<tbody>
+							<tr>
+								<td><widget:task task="${task}" />
+								<td>
+							<tr>
+						</tbody>
+					</c:forEach>
+				</table>
 			</div>
 			<div class="span3">
 				<div>
@@ -34,6 +45,7 @@
 					<c:forEach var="tag" items="${tagCloud.tags}">
 						<a href="/tag/${tag}">${tag}</a>
 					</c:forEach>
+
 
 
 				</div>

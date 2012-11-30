@@ -8,13 +8,17 @@
 
 
 <div>
+
 	<p>
 		<fmt:formatDate value="${task.date}" pattern="dd MMM yyyy" />
 	</p>
-	<span class="lead">${fn:escapeXml(task.title)}</span>
+	<span class="lead"><a href="/edit/${task.id}">${fn:escapeXml(task.title)}</a></span>
 	<c:forEach var="tag" items="${task.tagArray}">
 		<span class="badge badge-info">${fn:escapeXml(tag)}</span>
 	</c:forEach>
+	
 	<p>${fn:escapeXml(task.text)}</p>
+	<p><a href="edit/${task.id}/delete"><button type="button" class="btn btn-danger btn-mini" onclick=>Delete </button></a></p>
+
 </div>
 
