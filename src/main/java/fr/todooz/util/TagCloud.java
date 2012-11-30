@@ -45,4 +45,8 @@ public class TagCloud {
 		return tags.contains(string);
 	}
 	
+	public List<String> getTags() {
+	    return tags;
+	}
+	
 }
