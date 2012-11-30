@@ -67,14 +67,14 @@ public class AdminController {
 	    }
 
 	    taskService.save(task);
-	    redirectAttributes.addFlashAttribute("flashMessage", "La sauvegarde a réussi");
+	    redirectAttributes.addFlashAttribute("flashMessage", "La sauvegarde a r&eacuteussi");
 	    return "redirect:/";
 	}
 	
 	@RequestMapping("/edit/{id}/delete")
 	public String delete(@PathVariable Long id, Model model, RedirectAttributes redirectAttributes) {
 	    taskService.delete(id);
-	    redirectAttributes.addFlashAttribute("flashMessage", "Tache Supprimée");
+	    redirectAttributes.addFlashAttribute("flashMessage", "Tache Supprim&eacutee");
 	    return "redirect:/";
 	}
 	
